@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
+apply from: '../jacoco-report.gradle'
 
 android {
     compileSdkVersion 30
@@ -20,6 +21,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        coverageDebug {
+            minifyEnabled false
+            testCoverageEnabled true
         }
     }
     compileOptions {
@@ -51,3 +56,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 }
+
