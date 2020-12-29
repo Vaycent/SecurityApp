@@ -5,7 +5,7 @@ import android.text.TextUtils
 import com.sp4a.tt.security.interfaces.ISecurity
 
 
-class SecurityHelper  private constructor(private val context: Context): ISecurity{
+class SecurityHelper constructor(private val context: Context): ISecurity{
 
 
     companion object {
@@ -16,10 +16,8 @@ class SecurityHelper  private constructor(private val context: Context): ISecuri
                 }
     }
 
-    override fun decryptString(source: String?): ByteArray? {
-        return if (TextUtils.isEmpty(source)) {
-            null
-        } else source!!.toByteArray()
+    override fun decryptString(source: String?): String? {
+        return ""
 
     }
 

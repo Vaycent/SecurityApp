@@ -14,7 +14,7 @@ interface ISecurity {
      * @param source 要解密的字符串
      * @return 解密后的字符串
      */
-    fun decryptString(source: String?): ByteArray?
+    fun decryptString(source: String?): String?
 
     /**
      * 加密

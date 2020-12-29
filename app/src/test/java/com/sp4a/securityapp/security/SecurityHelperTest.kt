@@ -1,7 +1,6 @@
 package com.sp4a.securityapp.security
 
 import android.content.Context
-import com.sp4a.securityapp.security.SecurityHelper.Companion.getInstance
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
@@ -45,5 +44,15 @@ class SecurityHelperTest {
     @After
     fun clearDataForTest() {
         println("===@After clearDataForTest called===")
+    }
+
+    @Test
+    fun decryptStringTest(){
+        println("text:"+mSecurityHelper1.decryptString("decryptString"))
+    }
+
+    @Test
+    fun encryptStringTest(){
+        println("text:"+mSecurityHelper1.encryptString("encryptString"))
     }
 }
