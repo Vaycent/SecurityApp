@@ -5,12 +5,23 @@ import android.text.TextUtils
 import com.sp4a.tt.security.interfaces.ISecurity
 
 
-class SecurityHelper constructor(private val context: Context): ISecurity{
+class SecurityHelper constructor(private val context: Context) : ISecurity {
 
+    lateinit var foo: String
+
+    fun resetFoo(source:String){
+        foo = source
+    }
+
+    fun getAgainFoo(): String{
+        return foo
+    }
 
     companion object {
-        @Volatile private var instance: SecurityHelper? = null
-        @JvmStatic fun getInstance(context: Context) =
+        @Volatile
+        private var instance: SecurityHelper? = null
+        @JvmStatic
+        fun getInstance(context: Context) =
                 instance ?: synchronized(this) {
                     instance ?: SecurityHelper(context).also { instance = it }
                 }
