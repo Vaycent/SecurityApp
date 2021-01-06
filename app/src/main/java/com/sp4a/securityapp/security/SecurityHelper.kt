@@ -27,14 +27,16 @@ class SecurityHelper constructor(private val context: Context) : ISecurity {
                 }
     }
 
-    override fun decryptString(source: String?): String? {
-        return ""
-
-    }
-
     override fun encryptString(source: String?): String? {
-        return ""
+        return "sec_$source"
     }
 
+    override fun decryptString(source: String?): String? {
+        if (source != null) {
+//            return source.replace("sec_","")
+            return source.substring(4,source.length)
 
+        }
+        return null.toString()
+    }
 }
