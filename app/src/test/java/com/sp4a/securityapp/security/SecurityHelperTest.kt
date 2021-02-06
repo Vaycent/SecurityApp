@@ -104,4 +104,26 @@ class SecurityHelperTest {
         assertEquals(test, "")
     }
 
+
+
+//    @Test
+//    fun returnFei2() {
+//        assert(mSecurityHelper1.returnFei(15))
+//    }
+
+//    @Test
+//    fun returnFei3() {
+//        assert(mSecurityHelper1.returnFei(3))
+//    }
+
+    @Test
+    fun returnFei1() {
+        assert(mSecurityHelper1.returnFei(15))
+    }
+
+    @Test
+    fun returnFei2() {
+        assertEquals(false,mSecurityHelper1.returnFei(13))
+    }
+
 }
